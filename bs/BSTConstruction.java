@@ -1,4 +1,6 @@
-package ds;
+package bs;
+
+import ds.TreeNode;
 
 /**
  * Construct a binary search tree (BST)
@@ -15,7 +17,7 @@ public class BSTConstruction {
         }
         return root;
     }
-    
+
 
     public static void main(String[] args) {
 
