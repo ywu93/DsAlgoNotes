@@ -49,6 +49,32 @@ public class BsFunctions {
         invertBinaryTree(root.getRightNode());
     }
 
+//    public TreeNode buildTreeByPreOrderAndInOrder(int[] preOrder, int[] inOrder) {
+//        Map<Integer, Integer> valToIndex = new HashMap<>();
+//        for (int i = 0; i < inOrder.length; i++) {
+//            valToIndex.put(inOrder[i], i);
+//        }
+//
+//    }
+
+//    private TreeNode buildTree(Map<Integer, Integer> valueToIndex,
+//                               int[] preOrder, int preStart, int preEnd, int[] inOrder, int inStart, int endStart) {
+//    }
+
+    public static boolean isFullBinaryTree(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        if (root.getLeftNode() == null && root.getRightNode() == null) {
+            return true;
+        }
+        if (root.getLeftNode() != null && root.getRightNode() != null) {
+            return isFullBinaryTree(root.getLeftNode()) && isFullBinaryTree(root.getRightNode());
+        }
+        return false;
+    }
+
+
     public static void main(String[] args) {
         // construct a binary tree
         TreeNode root = new TreeNode(3);
@@ -61,5 +87,6 @@ public class BsFunctions {
         // invert the tree
         BsFunctions.invertBinaryTree(root);
         System.out.println("the inverted sequence of the tree:" + BsFunctions.levelTraverse(root));
+        System.out.println("The is full tree or not:" + BsFunctions.isFullBinaryTree(root));
     }
 }
